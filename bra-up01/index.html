@@ -8,9 +8,8 @@
 <!-- vídeo (VTurb) com prioridade -->
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
 <link rel="preconnect" href="https://scripts.converteai.net" crossorigin>
-<link rel="preload" href="https://scripts.converteai.net/70866a5d-6035-469c-a9ab-bb42c89eb86a/players/6ace6ce65c7e85022d111409/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/70866a5d-6035-469c-a9ab-bb42c89eb86a/players/6ad145a267a30e7c805abfe0/v4/player.js" as="script">
 <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-<link rel="preload" href="https://cdn.converteai.net/70866a5d-6035-469c-a9ab-bb42c89eb86a/6ace6cdcbef6ac448cfad954/main.m3u8" as="fetch">
 <link rel="dns-prefetch" href="https://cdn.converteai.net">
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
@@ -124,9 +123,9 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:34px 16px 40p
 
   <!-- VÍDEO (VTurb) -->
   <div class="video">
-    <vturb-smartplayer id="vid-6ace6ce65c7e85022d111409" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 133.33333333333331% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
+    <vturb-smartplayer id="vid-6ad145a267a30e7c805abfe0" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 133.33333333333331% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
   </div>
-  <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/70866a5d-6035-469c-a9ab-bb42c89eb86a/players/6ace6ce65c7e85022d111409/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+  <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/70866a5d-6035-469c-a9ab-bb42c89eb86a/players/6ad145a267a30e7c805abfe0/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
 
   <!-- BLOCO DA OFERTA: aparece quando a Sarah fala o preço (ver SEGUNDOS_PARA_MOSTRAR no fim da página) -->
   <section class="oferta esconder">
@@ -134,10 +133,10 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:34px 16px 40p
     <div class="price-card">
       <span class="tag">★ Only on this page</span>
       <h3>Fall-Proof Legs Protocol</h3>
-      <div class="mockup"><picture><source type="image/webp" srcset="imagens/mockup-protocolo.webp"><img src="imagens/mockup-protocolo.jpg" width="720" height="720" alt="Fall-Proof Legs Protocol and the Safe Home Checklist bonus" loading="lazy" decoding="async"></picture></div>
+      <div class="mockup"><picture><source type="image/webp" srcset="imagens/mockup-protocolo-pro.webp"><img src="imagens/mockup-protocolo-pro.jpg" width="720" height="720" alt="Fall-Proof Legs Protocol and the High-Value Professional Kit bonus" loading="lazy" decoding="async"></picture></div>
       <ul>
         <li><span class="nome"><span class="ck">✓</span><span>Fall-Proof Legs Protocol</span></span><span class="pr">$147</span></li>
-        <li><span class="nome"><span class="ck">✓</span><span>Bonus: Safe Home Checklist</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
+        <li><span class="nome"><span class="ck">✓</span><span>Bonus: High-Value Professional Kit</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
         <li><span class="nome"><span class="ck">✓</span><span>Easy for Any Senior, Even Seated</span></span><span class="inc">Included</span></li>
         <li><span class="nome"><span class="ck">✓</span><span>Instant Digital Access</span></span><span class="inc">Included</span></li>
         <li><span class="nome"><span class="ck">✓</span><span>28-Day Unconditional Guarantee</span></span><span class="inc">Included</span></li>
@@ -173,8 +172,8 @@ checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
     <div class="prova">
       <p class="num">1 in 4</p>
       <p class="t1">seniors in the U.S. falls every year.</p>
-      <p class="t2">And most families only find out how weak those legs really were <b>after the first fall.</b></p>
-      <p class="t3">Don't wait for it to happen. Protect the person you love today for just <span>$27</span>.</p>
+      <p class="t2">When it happens on your shift, it becomes an incident report and a scared family. <b>Families pay more for the caregiver who keeps their loved one steady.</b></p>
+      <p class="t3">Become the professional every family wants to hire, for just <span>$27</span>.</p>
     </div>
 
   </section>
@@ -185,7 +184,7 @@ checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
 
 <!-- DELAY: mostra o bloco da oferta no segundo em que a Sarah fala o preço -->
 <script>
-  var SEGUNDOS_PARA_MOSTRAR = 285; /* 4min45s: momento do pitch no vídeo */
+  var SEGUNDOS_PARA_MOSTRAR = 382; /* 6min22s: momento do pitch no vídeo */
   (function(){
     var mostrou=false;
     function mostrar(){ if(mostrou) return; mostrou=true; document.querySelectorAll('.esconder').forEach(function(el){el.style.display='block';}); }
