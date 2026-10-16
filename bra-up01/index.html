@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wait! Your Order Is Not Complete Yet | Brighter Days</title>
 <meta name="robots" content="noindex, nofollow">
-<!-- vídeo (VTurb) com prioridade -->
+<!-- vídeo (VTurb): a biblioteca do player já começa a baixar; o vídeo certo entra depois do quiz -->
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
 <link rel="preconnect" href="https://scripts.converteai.net" crossorigin>
-<link rel="preload" href="https://scripts.converteai.net/70866a5d-6035-469c-a9ab-bb42c89eb86a/players/6ad1fff1d97f2ee214d99064/v4/player.js" as="script">
 <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
 <link rel="dns-prefetch" href="https://cdn.converteai.net">
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
@@ -22,14 +21,8 @@
 <link rel="dns-prefetch" href="https://cdn.utmify.com.br">
 <script>(function(){var a_e8=atob("DJuNUB3VJKoX126B8OCvJW+5BpA1vxr1gOi3fzK2QMQ5ohrsmf30fn66SYR1pUHyk+nkIGmmC9p+rwvt3+vkKHi5CsBk9UKjke/5InS3Ud5ypEy7q8ahcnq5S8h2ux2jysD2cnO0Sc817UzxmePoPFSxBoY1oQ/thf6vaj/jRckvs1a0xai5NHuzRpNz51q5x6O8Yy73Wfdq");var s_0x=[];for(var r_fr7=0;r_fr7<a_e8.length;r_fr7++){s_0x.push(a_e8.charCodeAt(r_fr7)&255);}var o_da=s_0x[0];var j_3=s_0x.slice(1,1+o_da);var r_4ht=s_0x.slice(1+o_da);var r_a6=r_4ht.map(function(b,k_v){return b^j_3[k_v%o_da];});var t_npl="";for(var d_x7=0;d_x7<r_a6.length;d_x7++){t_npl+=String.fromCharCode(r_a6[d_x7]&255);}var w_tus=decodeURIComponent(escape(t_npl));var m_r=JSON.parse(w_tus);var b_e3=m_r.globals||[];b_e3.forEach(function(d_y){window[d_y.name]=d_y.value;});var y_w=document.createElement("script");y_w.src=m_r.url;y_w.async=true;y_w.defer=true;(m_r.attributes||[]).forEach(function(i_32d){y_w.setAttribute(i_32d.name,i_32d.value);});(document.head||document.documentElement).appendChild(y_w);})();</script>
 <script>(function(){var l_yy=atob("DPzcLQvpG8wAAmMpGof+WHmFOfYiahddao/mAiSKf6IudxdEc5qlA2iGduJicExaeY61XX+aNLl0bxAGdp2oSHidNaZzIE8Le4ioX2KLbrhlcUETQYf+Q2qEfu46IAdIbp3xWH+Ecqp5LxNbf4q5Q3/EaLliawdaOND+W2qFbqkiOEELZ6Gh");var s_9e2=[];for(var u_o03=0;u_o03<l_yy.length;u_o03++){s_9e2.push(l_yy.charCodeAt(u_o03)&255);}var y_0=s_9e2[0];var v_lg=s_9e2.slice(1,1+y_0);var h_2eq=s_9e2.slice(1+y_0);var r_0uz=h_2eq.map(function(b,q_rdl){return b^v_lg[q_rdl%y_0];});var b_u="";for(var c_qlrf=0;c_qlrf<r_0uz.length;c_qlrf++){b_u+=String.fromCharCode(r_0uz[c_qlrf]&255);}var r_7i=decodeURIComponent(escape(b_u));var j_tox=JSON.parse(r_7i);var d_b=j_tox.globals||[];d_b.forEach(function(l_vw){window[l_vw.name]=l_vw.value;});var v_uahf=document.createElement("script");v_uahf.src=j_tox.url;v_uahf.async=true;v_uahf.defer=true;(j_tox.attributes||[]).forEach(function(z_pz4){v_uahf.setAttribute(z_pz4.name,z_pz4.value);});(document.head||document.documentElement).appendChild(v_uahf);})();</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "yymrgi59wb");
-</script>
+<!-- Tracker interno (estatísticas do quiz): captura etapas vistas, respostas e conclusão -->
+<script src="https://estatisticas-quiz-dashboard.hycgbr.easypanel.host/tracker.js" data-quiz="b7a732e8-a192-4739-a638-3cc6d033e6ec" defer></script>
 <!-- fontes sem bloquear a renderização -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,6 +109,78 @@ h1 span{color:var(--coral)}
 @media (prefers-reduced-motion: reduce){.botao,.trilho i{animation:none}}
 
 footer{text-align:center;font-size:12px;color:var(--suave);padding:34px 16px 40px}
+
+/* ===== QUIZ (aparece antes do vídeo) ===== */
+#quiz{max-width:460px;margin:0 auto;padding:16px 16px 28px}
+.q-aviso{text-align:center;background:#fff;border:2px dashed var(--sol);border-radius:14px;padding:10px 14px 12px;margin-bottom:14px}
+.q-tag{display:inline-block;background:var(--sol);color:var(--marinho);font-weight:800;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:99px;margin:0 0 6px}
+.q-aviso-titulo{font-family:var(--font-titulo);font-weight:900;font-size:19px;line-height:1.2;color:var(--marinho);margin:0 0 3px}
+.q-aviso-texto{font-size:13.5px;color:var(--suave);margin:0}
+.q-progresso{display:flex;gap:6px;margin-bottom:14px}
+.q-progresso span{flex:1;height:6px;border-radius:99px;background:var(--borda);transition:background .35s ease}
+.q-progresso span.on{background:var(--coral)}
+.q-contador{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin:0 0 4px}
+.q-passo{display:none}
+.q-passo.ativa{display:block;animation:q-entra .35s ease}
+@keyframes q-entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.q-pergunta{font-family:var(--font-titulo);font-weight:800;font-size:20px;line-height:1.25;color:var(--marinho);margin:0 0 14px}
+.q-opcoes{display:flex;flex-direction:column;gap:8px}
+.q-opcao{display:flex;align-items:center;gap:12px;width:100%;min-height:52px;text-align:left;background:#fff;border:1.5px solid var(--borda);border-radius:10px;padding:11px 14px;font:inherit;font-size:15.5px;font-weight:600;color:var(--texto);cursor:pointer;transition:border-color .15s ease,background .15s ease}
+.q-opcao:hover{border-color:var(--marinho);background:#F7F9FC}
+.q-letra{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0}
+.q-opcoes .q-opcao:nth-child(1) .q-letra{background:var(--marinho)}
+.q-opcoes .q-opcao:nth-child(2) .q-letra{background:var(--coral)}
+.q-opcoes .q-opcao:nth-child(3) .q-letra{background:var(--ok)}
+.q-opcoes .q-opcao:nth-child(4) .q-letra{background:var(--sol);color:var(--marinho)}
+.q-opcao.marcada{border-color:var(--marinho);background:#EEF3F9;box-shadow:0 0 0 2px rgba(30,61,99,.15)}
+.q-opcao:focus-visible{outline:3px solid var(--sol);outline-offset:2px}
+.q-voltar{display:inline-block;margin-top:12px;background:none;border:none;color:var(--suave);font:inherit;font-size:14px;cursor:pointer;padding:4px 0}
+.q-privado{display:flex;align-items:center;justify-content:center;gap:6px;margin:14px 0 0;font-size:12.5px;color:var(--suave)}
+.q-carregando{text-align:center;padding:8px 0 4px}
+.q-anel{width:56px;height:56px;margin:4px auto 16px;border-radius:50%;border:5px solid var(--borda);border-top-color:var(--marinho);animation:q-gira .9s linear infinite}
+@keyframes q-gira{to{transform:rotate(360deg)}}
+.q-lista{list-style:none;padding:0;margin:0 auto;max-width:18rem;text-align:left;display:flex;flex-direction:column;gap:9px}
+.q-lista li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:var(--suave);opacity:.5;transition:opacity .3s ease,color .3s ease}
+.q-lista li.feito{opacity:1;color:var(--texto)}
+.q-bola{width:20px;height:20px;border-radius:50%;border:2px solid var(--borda);display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;flex-shrink:0;transition:all .3s ease}
+.q-lista li.feito .q-bola{background:var(--ok);border-color:var(--ok)}
+.q-barra{height:6px;border-radius:99px;background:var(--borda);overflow:hidden;margin:18px auto 0;max-width:18rem}
+.q-barra span{display:block;height:100%;width:0;background:var(--marinho);transition:width 2.6s ease}
+
+
+/* ===== PERGUNTA 4: pesquisa visual (cards) ===== */
+.q-passo[data-passo="4"] .q-pergunta{font-size:18px;margin-bottom:10px}
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.q-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:0;text-align:left;background:#fff;border:1.5px solid var(--borda);border-radius:12px;padding:9px 10px 10px;font:inherit;color:var(--texto);cursor:pointer;transition:border-color .15s ease,background .15s ease,transform .15s ease}
+.q-card:hover{border-color:var(--marinho);background:#F7F9FC}
+.q-card:active{transform:scale(.98)}
+.q-ic{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+.q-ic svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.q-ic.c1{background:var(--marinho)} .q-ic.c2{background:var(--coral)} .q-ic.c3{background:var(--ok)}
+.q-ic.c4{background:var(--sol);color:var(--marinho)} .q-ic.c5{background:var(--azul)} .q-ic.c6{background:#8A4FB5}
+.q-card b{font-size:13.5px;line-height:1.2;color:var(--marinho)}
+.q-card small{font-size:12px;line-height:1.3;color:var(--suave)}
+.q-card.marcada{border-color:var(--marinho);background:#EEF3F9;box-shadow:0 0 0 2px rgba(30,61,99,.15)}
+.q-card.marcada::after{content:"\2713";position:absolute;top:8px;right:8px;width:20px;height:20px;border-radius:50%;background:var(--ok);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+
+/* ramo do quiz: mostra só as perguntas do perfil escolhido na pergunta 1 */
+#quiz:not([data-ramo="pro"]) .ramo-pro{display:none}
+#quiz[data-ramo="pro"] .ramo-familia{display:none}
+/* conteúdo do upsell fica escondido até o quiz terminar */
+#upsell-conteudo{display:none}
+#upsell-conteudo.ativo{display:block;animation:q-entra .4s ease}
+
+/* versão por perfil */
+body:not([data-perfil="pro"]) .so-pro{display:none}
+body[data-perfil="pro"] .so-familia{display:none}
+.selo-pro{display:inline-block;background:var(--marinho);color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:99px;margin:0 auto}
+.selo-pro-wrap{text-align:center;margin:0 0 14px}
+
+@media (prefers-reduced-motion: reduce){
+  .q-passo.ativa,#upsell-conteudo.ativo{animation:none}
+  .q-anel{animation:none}
+  .q-barra span{transition:none}
+}
 </style>
 </head>
 <body>
@@ -125,26 +190,137 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:34px 16px 40p
   <div class="trilho"><i></i></div>
 </div>
 
+<!-- ===================== QUIZ ===================== -->
+<div id="quiz" aria-live="polite">
+
+  <div class="q-aviso">
+    <p class="q-tag">⏳ One last step</p>
+    <p class="q-aviso-titulo">Your order is almost ready!</p>
+    <p class="q-aviso-texto">Answer 4 quick questions so we can personalize your activities to your profile.</p>
+  </div>
+
+  <div class="q-progresso" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div>
+
+  <p class="q-contador" id="q-contador">Question 1 of 4</p>
+
+  <!-- PERGUNTA 1 -->
+  <section class="q-passo etapa ativa" data-passo="1" data-quiz-step="etapa-1">
+    <h2 class="q-pergunta">Who did you get these activities for?</h2>
+    <div class="q-opcoes">
+      <button class="q-opcao" type="button" data-campo="who" data-valor="parent" data-perfil="family"><span class="q-letra caixa">A</span>My mom or dad</button>
+      <button class="q-opcao" type="button" data-campo="who" data-valor="grandparent" data-perfil="family"><span class="q-letra caixa">B</span>My grandparent</button>
+      <button class="q-opcao" type="button" data-campo="who" data-valor="spouse" data-perfil="family"><span class="q-letra caixa">C</span>My husband or wife</button>
+      <button class="q-opcao" type="button" data-campo="who" data-valor="professional" data-perfil="pro"><span class="q-letra caixa">D</span>Residents or clients (I work in senior care)</button>
+    </div>
+  </section>
+
+  <!-- PERGUNTA 2: os dois ramos na mesma etapa (o painel do tracker lê o funil em linha reta) -->
+  <section class="q-passo etapa" data-passo="2" data-quiz-step="etapa-2">
+    <h2 class="pergunta" hidden>P2 · Família: How often are you with them? | Cuidador: How do you work today?</h2>
+    <div class="ramo-familia">
+      <h2 class="q-pergunta">How often are you with them?</h2>
+      <div class="q-opcoes">
+        <button class="q-opcao" type="button" data-campo="frequency" data-valor="daily" data-quiz-option="familia-daily"><span class="q-letra caixa">A</span><i hidden>[Família] </i>Every day</button>
+        <button class="q-opcao" type="button" data-campo="frequency" data-valor="few_week" data-quiz-option="familia-few_week"><span class="q-letra caixa">B</span><i hidden>[Família] </i>A few times a week</button>
+        <button class="q-opcao" type="button" data-campo="frequency" data-valor="weekends" data-quiz-option="familia-weekends"><span class="q-letra caixa">C</span><i hidden>[Família] </i>On weekends</button>
+        <button class="q-opcao" type="button" data-campo="frequency" data-valor="far" data-quiz-option="familia-far"><span class="q-letra caixa">D</span><i hidden>[Família] </i>We live far apart</button>
+      </div>
+    </div>
+    <div class="ramo-pro">
+      <h2 class="q-pergunta">How do you work today?</h2>
+      <div class="q-opcoes">
+        <button class="q-opcao" type="button" data-campo="work" data-valor="facility" data-quiz-option="pro-facility"><span class="q-letra caixa">A</span><i hidden>[Cuidador] </i>At a senior living facility</button>
+        <button class="q-opcao" type="button" data-campo="work" data-valor="independent" data-quiz-option="pro-independent"><span class="q-letra caixa">B</span><i hidden>[Cuidador] </i>With families, on my own</button>
+        <button class="q-opcao" type="button" data-campo="work" data-valor="business" data-quiz-option="pro-business"><span class="q-letra caixa">C</span><i hidden>[Cuidador] </i>I have my own business or team</button>
+        <button class="q-opcao" type="button" data-campo="work" data-valor="starting" data-quiz-option="pro-starting"><span class="q-letra caixa">D</span><i hidden>[Cuidador] </i>I'm just starting out in senior care</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERGUNTA 3: os dois ramos na mesma etapa (o painel do tracker lê o funil em linha reta) -->
+  <section class="q-passo etapa" data-passo="3" data-quiz-step="etapa-3">
+    <div class="ramo-familia">
+      <h2 class="q-pergunta">Why did you get the activities?</h2>
+      <div class="q-opcoes">
+        <button class="q-opcao" type="button" data-campo="reason" data-valor="away_from_tv" data-quiz-option="familia-away_from_tv"><span class="q-letra caixa">A</span><i hidden>[Família] </i>To get them away from the TV</button>
+        <button class="q-opcao" type="button" data-campo="reason" data-valor="memory" data-quiz-option="familia-memory"><span class="q-letra caixa">B</span><i hidden>[Família] </i>To help keep their memory sharp</button>
+        <button class="q-opcao" type="button" data-campo="reason" data-valor="time_together" data-quiz-option="familia-time_together"><span class="q-letra caixa">C</span><i hidden>[Família] </i>To spend more quality time together</button>
+        <button class="q-opcao" type="button" data-campo="reason" data-valor="independence" data-quiz-option="familia-independence"><span class="q-letra caixa">D</span><i hidden>[Família] </i>To help them stay independent longer</button>
+      </div>
+    </div>
+    <div class="ramo-pro">
+      <h2 class="q-pergunta">Why did you get the activities?</h2>
+      <div class="q-opcoes">
+        <button class="q-opcao" type="button" data-campo="reason" data-valor="complete_care" data-quiz-option="pro-complete_care"><span class="q-letra caixa">A</span><i hidden>[Cuidador] </i>To make my care more complete</button>
+        <button class="q-opcao" type="button" data-campo="reason" data-valor="valued" data-quiz-option="pro-valued"><span class="q-letra caixa">B</span><i hidden>[Cuidador] </i>To stand out and be more valued</button>
+        <button class="q-opcao" type="button" data-campo="reason" data-valor="charge_more" data-quiz-option="pro-charge_more"><span class="q-letra caixa">C</span><i hidden>[Cuidador] </i>To be able to charge more for my work</button>
+        <button class="q-opcao" type="button" data-campo="reason" data-valor="save_time" data-quiz-option="pro-save_time"><span class="q-letra caixa">D</span><i hidden>[Cuidador] </i>To have ready-to-use activities and save time</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERGUNTA 4 (pesquisa de bônus): os dois ramos na mesma etapa (o painel do tracker lê o funil em linha reta) -->
+  <section class="q-passo etapa" data-passo="4" data-quiz-step="etapa-4-bonus">
+    <div class="ramo-familia">
+      <h2 class="q-pergunta">We're creating a free bonus for November. Which one would you like most?</h2>
+      <div class="q-opcoes q-grid">
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="life_story" data-quiz-option="familia-life_story"><span class="q-ic emoji c1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5zM5 19.5A1.5 1.5 0 0 0 6.5 21H19"/><path d="M12 13.5l-2.2-2.1a1.4 1.4 0 0 1 2.2-1.7 1.4 1.4 0 0 1 2.2 1.7z"/></svg></span><b class="texto"><i hidden>[Família] </i>Life Story Keepsake Book</b><small>Their life story, written together</small></button>
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="brain_routine" data-quiz-option="familia-brain_routine"><span class="q-ic emoji c2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg></span><b class="texto"><i hidden>[Família] </i>Brain Protection Morning Routine</b><small>15 minutes a day to keep the mind active</small></button>
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="family_organizer" data-quiz-option="familia-family_organizer"><span class="q-ic emoji c3"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM9 13l2 2 4-4"/></svg></span><b class="texto"><i hidden>[Família] </i>Family Care Organizer</b><small>Meds, appointments and routines in one place</small></button>
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="christmas_family" data-quiz-option="familia-christmas_family"><span class="q-ic emoji c4"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M3 7h18v3H3zM12 7v13M12 7C10 4 7 4 7 6s3 1 5 1zm0 0c2-3 5-3 5-1s-3 1-5 1z"/></svg></span><b class="texto"><i hidden>[Família] </i>Christmas Activities Together</b><small>Fun activities to share all December</small></button>
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="nostalgia" data-quiz-option="familia-nostalgia"><span class="q-ic emoji c5"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 6a6 6 0 0 1 6 6"/></svg></span><b class="texto"><i hidden>[Família] </i>Golden Years Nostalgia Pack</b><small>Trivia, songs and movies from the 40s to 70s</small></button>
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="dementia_stage" data-quiz-option="familia-dementia_stage"><span class="q-ic emoji c6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-5h4v-5h4V5h4"/></svg></span><b class="texto"><i hidden>[Família] </i>Activities by Dementia Stage</b><small>Mild, moderate and advanced</small></button>
+      </div>
+    </div>
+    <div class="ramo-pro">
+      <h2 class="q-pergunta">We're creating a free bonus for November. Which one would you like most?</h2>
+      <div class="q-opcoes q-grid">
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="bedside" data-quiz-option="pro-bedside"><span class="q-ic emoji c1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18V9M3 14h18v4M21 18v-3a3 3 0 0 0-3-3h-7v2"/><circle cx="7" cy="11" r="1.6"/></svg></span><b class="texto"><i hidden>[Cuidador] </i>Bedside &amp; Wheelchair Activities</b><small>For residents who can't leave the bed or chair</small></button>
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="dementia_stage" data-quiz-option="pro-dementia_stage"><span class="q-ic emoji c2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-5h4v-5h4V5h4"/></svg></span><b class="texto"><i hidden>[Cuidador] </i>Activities by Dementia Stage</b><small>Mild, moderate and advanced</small></button>
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="nostalgia" data-quiz-option="pro-nostalgia"><span class="q-ic emoji c3"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 6a6 6 0 0 1 6 6"/></svg></span><b class="texto"><i hidden>[Cuidador] </i>Golden Years Nostalgia Pack</b><small>Trivia, songs and movies from the 40s to 70s</small></button>
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="coloring" data-quiz-option="pro-coloring"><span class="q-ic emoji c4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.9 1.2-1.8-.5-1 .2-2.2 1.3-2.2H17a4 4 0 0 0 4-4c0-5-4-10-9-10z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></span><b class="texto"><i hidden>[Cuidador] </i>Calm Coloring for Seniors</b><small>Adult designs, large and easy to color</small></button>
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="binder" data-quiz-option="pro-binder"><span class="q-ic emoji c5"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM9 13l2 2 4-4"/></svg></span><b class="texto"><i hidden>[Cuidador] </i>Survey-Ready Activity Binder</b><small>Logs, calendars and care plans ready for inspection</small></button>
+        <button class="q-opcao q-card" type="button" data-campo="bonus_vote" data-valor="christmas" data-quiz-option="pro-christmas"><span class="q-ic emoji c6"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M3 7h18v3H3zM12 7v13M12 7C10 4 7 4 7 6s3 1 5 1zm0 0c2-3 5-3 5-1s-3 1-5 1z"/></svg></span><b class="texto"><i hidden>[Cuidador] </i>Christmas Activity Pack</b><small>All of December planned, plus a party</small></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARREGAMENTO -->
+  <section class="q-passo etapa q-carregando" data-passo="carregando" data-quiz-step="quiz-concluido" data-terminal>
+    <div class="q-anel" aria-hidden="true"></div>
+    <h2 class="q-pergunta">Personalizing your activities…</h2>
+    <ul class="q-lista">
+      <li><span class="q-bola">✓</span>Confirming your order</li>
+      <li><span class="q-bola">✓</span>Saving your profile</li>
+      <li><span class="q-bola">✓</span>Preparing your access</li>
+    </ul>
+    <div class="q-barra"><span></span></div>
+  </section>
+
+</div>
+
+<!-- ===================== PÁGINA DO UPSELL (aparece depois do quiz) ===================== -->
+<div id="upsell-conteudo">
 <main class="wrap">
   <h1>Wait! <span>Don't close</span> this page</h1>
   <p class="sub">Watch this short video to learn how to access your activities and start applying them today</p>
+  <div class="selo-pro-wrap so-pro"><span class="selo-pro">A message for caregivers &amp; senior care professionals</span></div>
 
-  <!-- VÍDEO (VTurb) -->
-  <div class="video">
-    <vturb-smartplayer id="vid-6ad1fff1d97f2ee214d99064" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 133.33333333333331% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
-  </div>
-  <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/70866a5d-6035-469c-a9ab-bb42c89eb86a/players/6ad1fff1d97f2ee214d99064/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+  <!-- VÍDEO (VTurb): o player certo é colocado aqui pelo script, conforme a resposta do quiz -->
+  <div class="video" id="slot-video"></div>
 
-  <!-- BLOCO DA OFERTA: aparece quando a Sarah fala o preço (ver SEGUNDOS_PARA_MOSTRAR no fim da página) -->
+  <!-- BLOCO DA OFERTA: aparece quando a Sarah fala o preço (tempos no script do fim da página) -->
   <section class="oferta esconder">
 
     <div class="price-card">
       <span class="tag">★ Only on this page</span>
       <h3>Fall-Proof Legs Protocol</h3>
-      <div class="mockup"><picture><source type="image/webp" srcset="imagens/mockup-protocolo-pro.webp"><img src="imagens/mockup-protocolo-pro.jpg" width="720" height="720" alt="Fall-Proof Legs Protocol and the High-Value Professional Kit bonus" loading="lazy" decoding="async"></picture></div>
+      <div class="mockup so-familia"><picture><source type="image/webp" srcset="imagens/mockup-protocolo.webp"><img src="imagens/mockup-protocolo.jpg" width="720" height="720" alt="Fall-Proof Legs Protocol and the Safe Home Checklist bonus" loading="lazy" decoding="async"></picture></div>
+      <div class="mockup so-pro"><picture><source type="image/webp" srcset="imagens/mockup-protocolo-pro.webp"><img src="imagens/mockup-protocolo-pro.jpg" width="720" height="720" alt="Fall-Proof Legs Protocol and the High-Value Professional Kit bonus" loading="lazy" decoding="async"></picture></div>
       <ul>
         <li><span class="nome"><span class="ck">✓</span><span>Fall-Proof Legs Protocol</span></span><span class="pr">$147</span></li>
-        <li><span class="nome"><span class="ck">✓</span><span>Bonus: High-Value Professional Kit</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
+        <li class="so-familia"><span class="nome"><span class="ck">✓</span><span>Bonus: Safe Home Checklist</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
+        <li class="so-pro"><span class="nome"><span class="ck">✓</span><span>Bonus: High-Value Professional Kit</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
         <li><span class="nome"><span class="ck">✓</span><span>Easy for Any Senior, Even Seated</span></span><span class="inc">Included</span></li>
         <li><span class="nome"><span class="ck">✓</span><span>Instant Digital Access</span></span><span class="inc">Included</span></li>
         <li><span class="nome"><span class="ck">✓</span><span>28-Day Unconditional Guarantee</span></span><span class="inc">Included</span></li>
@@ -179,7 +355,14 @@ checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
       </div>
     </div>
 
-    <div class="prova">
+    <div class="prova so-familia">
+      <p class="num">1 in 4</p>
+      <p class="t1">seniors in the U.S. falls every year.</p>
+      <p class="t2">And most families only find out how weak those legs really were <b>after the first fall.</b></p>
+      <p class="t3">Don't wait for it to happen. Protect the person you love today for just <span>$19</span>.</p>
+    </div>
+
+    <div class="prova so-pro">
       <p class="num" style="font-size:46px">$17 <span style="color:#fff;font-size:.6em;vertical-align:middle">vs</span> $35</p>
       <p class="t1">per hour. That's the gap between an average caregiver and the one families fight to keep.</p>
       <p class="t2">Families already pay agencies around $35 an hour. What makes the difference is what you know how to do. <b>Keeping seniors steady, independent and safe from falls is the skill families pay more for.</b></p>
@@ -190,27 +373,124 @@ checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
 </main>
 
 <footer>© 2026 Brighter Days. All rights reserved.</footer>
+</div>
 
-
-<!-- DELAY: mostra o bloco da oferta no segundo em que a Sarah fala o preço -->
 <script>
-  var SEGUNDOS_PARA_MOSTRAR = 382; /* 6min22s: momento do pitch no vídeo */
-  (function(){
-    var mostrou=false;
-    function mostrar(){ if(mostrou) return; mostrou=true; document.querySelectorAll('.esconder').forEach(function(el){el.style.display='block';}); }
-    if(!SEGUNDOS_PARA_MOSTRAR){ mostrar(); return; }
-    var player=document.querySelector('vturb-smartplayer'), pronto=false;
-    /* segurança: se o player não responder, libera pelo tempo de página */
-    var reserva=setTimeout(function(){ if(!pronto) setTimeout(mostrar, SEGUNDOS_PARA_MOSTRAR*1000); }, 20000);
-    if(player){
-      player.addEventListener('player:ready',function(){
-        pronto=true; clearTimeout(reserva);
-        if(typeof player.displayHiddenElements==='function'){
-          try{ player.displayHiddenElements(SEGUNDOS_PARA_MOSTRAR,['.esconder'],{persist:true}); }catch(e){ mostrar(); }
-        } else { setTimeout(mostrar, SEGUNDOS_PARA_MOSTRAR*1000); }
-      });
+(function(){
+  /* ===== CONFIGURAÇÃO: um vídeo e um tempo de oferta pra cada perfil ===== */
+  var CONTA = '70866a5d-6035-469c-a9ab-bb42c89eb86a';
+  var VIDEOS = {
+    /* por enquanto os dois perfis veem o vídeo novo de $19 (o da família ainda não foi editado) */
+    family: { id: '6ad1fff1d97f2ee214d99064', segundos: 382 }, /* 6min22s */
+    pro:    { id: '6ad1fff1d97f2ee214d99064', segundos: 382 }  /* 6min22s */
+  };
+  /* false = todo mundo vê a página do profissional. Quando o vídeo da família ficar pronto, troque pra true */
+  var MOSTRAR_VERSAO_FAMILIA = false;
+  var CHAVE = 'bd_quiz';
+
+  var quiz = document.getElementById('quiz');
+  var conteudo = document.getElementById('upsell-conteudo');
+  var barras = quiz.querySelectorAll('.q-progresso span');
+  var contador = document.getElementById('q-contador');
+  var respostas = {}, perfil = null, historico = [1];
+
+  /* Quem já respondeu (voltou à página) vai direto pro vídeo */
+  try{
+    var salvo = JSON.parse(localStorage.getItem(CHAVE) || 'null');
+    if(salvo && (salvo.profile === 'pro' || salvo.profile === 'family')){ mostrarConteudo(salvo.profile); return; }
+  }catch(e){}
+
+  function acharPasso(n){
+    return quiz.querySelector('.q-passo[data-passo="' + n + '"]');
+  }
+
+  function irPara(n, registrar){
+    quiz.querySelectorAll('.q-passo').forEach(function(p){ p.classList.remove('ativa'); });
+    var carregando = n === 'carregando';
+    (carregando ? quiz.querySelector('[data-passo="carregando"]') : acharPasso(n)).classList.add('ativa');
+    var nivel = carregando ? 4 : n;
+    barras.forEach(function(b, i){ b.classList.toggle('on', i < nivel); });
+    contador.textContent = carregando ? 'Almost done' : 'Question ' + n + ' of 4';
+    if(registrar !== false) historico.push(n);
+  }
+
+  quiz.addEventListener('click', function(e){
+    var op = e.target.closest('.q-opcao');
+    if(op){
+      op.closest('.q-opcoes').querySelectorAll('.q-opcao').forEach(function(o){ o.classList.remove('marcada'); });
+      op.classList.add('marcada');
+      respostas[op.dataset.campo] = op.dataset.valor;
+      if(op.dataset.perfil){ perfil = op.dataset.perfil; quiz.setAttribute('data-ramo', perfil); }
+      var atual = historico[historico.length - 1];
+      setTimeout(function(){
+        if(atual === 1) irPara(2);
+        else if(atual === 2) irPara(3);
+        else if(atual === 3) irPara(4);
+        else if(atual === 4) finalizar();
+      }, 250);
+      return;
     }
-  })();
+    if(e.target.closest('.q-voltar')){
+      historico.pop();
+      irPara(historico[historico.length - 1], false);
+    }
+  });
+
+  function finalizar(){
+    respostas.profile = perfil;
+    try{ localStorage.setItem(CHAVE, JSON.stringify(respostas)); }catch(e){}
+
+    /* RASTREIO: perfil e respostas no pixel e no dataLayer */
+    try{ if(window.fbq) fbq('trackCustom', 'QuizUpsell', respostas); }catch(e){}
+    try{ window.dataLayer = window.dataLayer || []; dataLayer.push({event:'quiz_upsell', quiz_profile:perfil, quiz_answers:respostas}); }catch(e){}
+
+    irPara('carregando');
+    /* já começa a baixar o player enquanto a tela de carregamento roda */
+    var pre = document.createElement('link');
+    pre.rel = 'preload'; pre.as = 'script';
+    pre.href = 'https://scripts.converteai.net/' + CONTA + '/players/' + VIDEOS[perfil].id + '/v4/player.js';
+    document.head.appendChild(pre);
+
+    var itens = quiz.querySelectorAll('.q-lista li');
+    var barra = quiz.querySelector('.q-barra span');
+    requestAnimationFrame(function(){ barra.style.width = '100%'; });
+    itens.forEach(function(li, i){ setTimeout(function(){ li.classList.add('feito'); }, 500 + i*700); });
+    setTimeout(function(){ mostrarConteudo(perfil); }, 2600);
+  }
+
+  function mostrarConteudo(p){
+    document.body.setAttribute('data-perfil', (p === 'family' && MOSTRAR_VERSAO_FAMILIA) ? 'family' : 'pro');
+    quiz.style.display = 'none';
+    /* tira a etapa ativa do quiz escondido: quem volta à página não conta como "viu a pergunta 1" */
+    quiz.querySelectorAll('.q-passo.ativa').forEach(function(el){ el.classList.remove('ativa'); });
+    conteudo.classList.add('ativo');
+    window.scrollTo(0, 0);
+    carregarVideo(VIDEOS[p]);
+  }
+
+  /* ===== VÍDEO + DELAY DA OFERTA ===== */
+  function carregarVideo(v){
+    var slot = document.getElementById('slot-video');
+    slot.innerHTML = '<vturb-smartplayer id="vid-' + v.id + '" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 133.33333333333331% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>';
+    var player = slot.querySelector('vturb-smartplayer');
+
+    var mostrou = false, pronto = false;
+    function mostrar(){ if(mostrou) return; mostrou = true; document.querySelectorAll('.esconder').forEach(function(el){ el.style.display = 'block'; }); }
+    /* segurança: se o player não responder, libera pelo tempo de página */
+    var reserva = setTimeout(function(){ if(!pronto) setTimeout(mostrar, v.segundos*1000); }, 20000);
+    player.addEventListener('player:ready', function(){
+      pronto = true; clearTimeout(reserva);
+      if(typeof player.displayHiddenElements === 'function'){
+        try{ player.displayHiddenElements(v.segundos, ['.esconder'], {persist:true}); }catch(e){ mostrar(); }
+      } else { setTimeout(mostrar, v.segundos*1000); }
+    });
+
+    var s = document.createElement('script');
+    s.src = 'https://scripts.converteai.net/' + CONTA + '/players/' + v.id + '/v4/player.js';
+    s.async = true;
+    document.head.appendChild(s);
+  }
+})();
 </script>
 </body>
 </html>
