@@ -76,7 +76,7 @@ h1 span{color:var(--coral)}
 .economia{background:#E4F4EA;color:#1F7A45;font-weight:800;text-align:center;border-radius:10px;padding:10px;font-size:15px}
 
 /* botões da Hotmart */
-#hotmart-sales-funnel{margin:14px 0 6px;min-height:110px}
+#hotmart-sales-funnel{margin:16px 0 6px;min-height:110px}
 .seguro{text-align:center;font-size:12px;color:var(--suave);margin:0 0 6px}
 
 /* garantia */
@@ -115,9 +115,18 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:34px 16px 40p
 .valor-box .v1{margin:0;font-family:var(--font-titulo);font-weight:800;font-size:18px;color:var(--titulo)}
 .valor-box .v2{margin:0;font-family:var(--font-titulo);font-weight:900;font-size:64px;line-height:1.05;color:#23934F}
 .cta-txt{text-align:center;font-family:var(--font-titulo);font-weight:900;font-size:17px;color:var(--coral);margin:0}
+
+/* versão por perfil (família x profissional) */
+body:not([data-perfil="family"]) .so-familia{display:none}
+body[data-perfil="family"] .so-pro{display:none}
 </style>
 </head>
 <body>
+<script>
+/* false = todo mundo vê a versão do profissional. Quando a família tiver vídeo próprio no upsell, troque pra true */
+var MOSTRAR_VERSAO_FAMILIA = false;
+(function(){var p='pro';try{var s=JSON.parse(localStorage.getItem('bd_quiz')||'null');if(MOSTRAR_VERSAO_FAMILIA&&s&&s.profile==='family')p='family';}catch(e){}document.body.setAttribute('data-perfil',p);})();
+</script>
 
 <div class="passo">
   <p><span>Wait!</span> A special discount was unlocked for you</p>
@@ -133,35 +142,38 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:34px 16px 40p
       <picture><source type="image/webp" srcset="imagens/sarah.webp"><img src="imagens/sarah.jpg" width="200" height="200" alt="Sarah Miller, OTR/L"></picture>
       <div><b>A personal note from Sarah</b><small>Occupational Therapist, OTR/L</small></div>
     </div>
-    <p>I understand. Maybe $27 isn't in your budget right now, and that's okay.</p>
+    <p>I understand. Maybe $19 isn't in your budget right now, and that's okay.</p>
     <p>But I can't let you leave this page without it. Because, as you saw in the video:</p>
-    <p class="alerta"><b>1 in 4 seniors</b> falls every year, and falls are the <b>leading cause of injury death after age 65.</b> Most families only find out how weak those legs were after the first fall.</p>
-    <p>So I've decided to do something I don't usually do. Only on this page, you can get the complete Fall-Proof Legs Protocol with <span class="off">37% OFF</span>.</p>
+    <p class="alerta so-familia"><b>1 in 4 seniors</b> falls every year, and falls are the <b>leading cause of injury death after age 65.</b> Most families only find out how weak those legs were after the first fall.</p>
+    <p class="alerta so-pro">Families pay agencies around <b>$35 an hour</b>, while the average caregiver earns <b>less than $17</b>. What makes the difference is what you know how to do, and <b>keeping seniors steady and safe from falls</b> is the skill families pay more for.</p>
+    <p class="so-familia">So I've decided to do something I don't usually do. Only on this page, you can get the complete Fall-Proof Legs Protocol with <span class="off">48% OFF</span>.</p>
+    <p class="so-pro">So I've decided to do something I don't usually do. Only on this page, you can get the complete Fall-Proof Legs Protocol and the High-Value Professional Kit with <span class="off">48% OFF</span>.</p>
     <div class="valor-box">
       <p class="v1">In other words, for just</p>
-      <p class="v2">$17</p>
+      <p class="v2">$9.90</p>
     </div>
     <p class="cta-txt">Click the button below and add it to your order now ↓</p>
   </div>
 
   <div class="price-card" style="margin-top:34px">
-    <span class="tag">★ 37% OFF • Last chance</span>
+    <span class="tag">★ 48% OFF • Last chance</span>
     <h3>Fall-Proof Legs Protocol</h3>
-    <div class="mockup"><picture><source type="image/webp" srcset="imagens/mockup-protocolo.webp"><img src="imagens/mockup-protocolo.jpg" width="720" height="720" alt="Fall-Proof Legs Protocol and the Safe Home Checklist bonus" decoding="async"></picture></div>
+    <div class="mockup so-familia"><picture><source type="image/webp" srcset="imagens/mockup-protocolo.webp"><img src="imagens/mockup-protocolo.jpg" width="720" height="720" alt="Fall-Proof Legs Protocol and the Safe Home Checklist bonus" loading="lazy" decoding="async"></picture></div>
+    <div class="mockup so-pro"><picture><source type="image/webp" srcset="imagens/mockup-protocolo-pro.webp"><img src="imagens/mockup-protocolo-pro.jpg" width="720" height="720" alt="Fall-Proof Legs Protocol and the High-Value Professional Kit bonus" loading="lazy" decoding="async"></picture></div>
     <ul>
       <li><span class="nome"><span class="ck">✓</span><span>Fall-Proof Legs Protocol</span></span><span class="pr">$147</span></li>
-      <li><span class="nome"><span class="ck">✓</span><span>Bonus: Safe Home Checklist</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
+      <li class="so-familia"><span class="nome"><span class="ck">✓</span><span>Bonus: Safe Home Checklist</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
+      <li class="so-pro"><span class="nome"><span class="ck">✓</span><span>Bonus: High-Value Professional Kit</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
       <li><span class="nome"><span class="ck">✓</span><span>Easy for Any Senior, Even Seated</span></span><span class="inc">Included</span></li>
       <li><span class="nome"><span class="ck">✓</span><span>Instant Digital Access</span></span><span class="inc">Included</span></li>
       <li><span class="nome"><span class="ck">✓</span><span>28-Day Unconditional Guarantee</span></span><span class="inc">Included</span></li>
     </ul>
     <div class="preco">
-      <p class="preco-de">Was <span class="riscado">$27</span> now only:</p>
-      <p class="preco-final">$17</p>
+      <p class="preco-de">Was <span class="riscado">$19</span> now only:</p>
+      <p class="preco-final">$9.90</p>
       <p class="legenda">One-time payment • No subscription</p>
     </div>
     <div class="economia">This discount disappears when you leave this page</div>
-  </div>
 
 <!-- HOTMART - Sales Funnel Widget -->
 <!--- sales funnel container --->
@@ -173,7 +185,10 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:34px 16px 40p
 checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
 </script>
 <!-- HOTMART - Sales Funnel Widget -->
-  <p class="seguro">🔒 Secure purchase processed by Hotmart</p>
+    <p class="seguro">🔒 Secure purchase processed by Hotmart</p>
+  </div>
+
+
 
   <div class="garantia">
     <picture><source type="image/webp" srcset="imagens/selo-garantia-28-dias.webp"><img src="imagens/selo-garantia-28-dias.png" width="600" height="600" alt="28-day money-back guarantee" loading="lazy" decoding="async"></picture>
