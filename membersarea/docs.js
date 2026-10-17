@@ -56,25 +56,25 @@ window.DOCS = {
   "mb": 2.8
  },
  "memory": {
-  "pages": 33,
+  "pages": 53,
   "ratio": 1.5,
   "pdf": "pdf/memory.pdf",
   "file": "50+ Memory Activities for Dementia & Alzheimers.pdf",
-  "mb": 8.4
+  "mb": 25.6
  },
  "bedridden": {
-  "pages": 32,
+  "pages": 52,
   "ratio": 1.5,
   "pdf": "pdf/bedridden.pdf",
   "file": "50+ Activities for Bedridden Seniors.pdf",
-  "mb": 9.9
+  "mb": 30.2
  },
  "fall-proof": {
-  "pages": 21,
+  "pages": 38,
   "ratio": 1.5,
   "pdf": "pdf/fall-proof.pdf",
   "file": "Fall-Proof Legs Protocol.pdf",
-  "mb": 5.0
+  "mb": 14.4
  },
  "safe-home": {
   "pages": 6,
