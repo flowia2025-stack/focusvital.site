@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brighter Days · Members Area</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Tela de login (auth.js decide quando mostrar) -->
+<div class="login" id="viewLogin" hidden>
+  <main class="login-card">
+    <div class="brand login-brand"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="22" r="9" fill="#FFC93C"/><g stroke="#F5A623" stroke-width="3" stroke-linecap="round"><path d="M20 5v4M8 10l2.8 2.8M32 10l-2.8 2.8M4 22h4M32 22h4"/></g><path d="M7 33h26" stroke="#1B2A5E" stroke-width="3" stroke-linecap="round"/></svg><span>Brighter Days</span></div>
+    <h1>Welcome to your Members Area</h1>
+    <p class="login-sub">Enter the email you used to buy Brighter Days to access your activities.</p>
+    <form id="loginForm">
+      <label for="loginEmail">Your email</label>
+      <input type="email" id="loginEmail" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com">
+      <button type="submit" class="btn btn-sun" id="loginBtn"><span id="loginBtnLabel">Sign In</span></button>
+      <div class="login-err" id="loginError" role="alert" hidden></div>
+    </form>
+    <p class="login-help">No password needed. Use the same email from your purchase receipt.</p>
+  </main>
+</div>
+
+<!-- Conteúdo da área de membros: escondido até o login ser confirmado -->
+<div id="appRoot" style="display:none">
+<div id="app"></div>
+
+<p class="signout"><button type="button" id="logoutBtn">Sign out</button></p>
+
+<!-- Leitor (PDF e imagem em tela cheia) -->
+<div class="viewer" id="viewer" hidden>
+  <div class="v-bar">
+    <button class="v-btn" id="vClose" aria-label="Close">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="v-title">
+      <strong id="vTitle"></strong>
+      <span id="vCount"></span>
+    </div>
+    <a class="v-dl" id="vDownload" href="#" download>
+      <svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+      <span>Download</span>
+    </a>
+  </div>
+  <div class="v-scroll" id="vScroll"><div class="v-pages" id="vPages"></div></div>
+  <div class="v-zoom">
+    <button class="v-btn" id="vOut" aria-label="Zoom out"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></button>
+    <button class="v-btn" id="vIn" aria-label="Zoom in"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></button>
+  </div>
+  <a class="v-cta" id="vCta" href="#" hidden></a>
+  <button class="g-nav prev" id="gPrev" aria-label="Previous image" hidden><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="g-nav next" id="gNext" aria-label="Next image" hidden><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
+
+<!-- Janela de desbloqueio -->
+<div class="sheet-wrap" id="sheet" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet" role="dialog" aria-modal="true" id="sheetBody"></div>
+</div>
+</div>
+
+<!-- Tela de carregamento (também cobre a verificação da sessão) -->
+<div class="loader" id="loader" hidden>
+  <div class="ld-sun"><svg viewBox="0 0 80 80" aria-hidden="true"><g class="rays" stroke="#F5A623" stroke-width="5" stroke-linecap="round"><path d="M40 6v9M40 65v9M6 40h9M65 40h9M16 16l6.4 6.4M57.6 57.6L64 64M16 64l6.4-6.4M57.6 22.4L64 16"/></g><circle cx="40" cy="40" r="17" fill="#FFC93C"/></svg></div>
+  <strong>Opening Brighter Days</strong>
+  <span>Getting your activities ready…</span>
+</div>
+
+<script src="docs.js"></script>
+<script src="app.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
