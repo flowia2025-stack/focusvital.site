@@ -141,7 +141,7 @@
     shield: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>'
   };
   function v(u) { return u + '?v=' + (window.IMGV || '1'); }
-  function pageUrl(slug, p) { return 'pages/' + slug + '/' + String(p).padStart(3, '0') + '.webp'; }
+  function pageUrl(slug, p) { return v('pages/' + slug + '/' + String(p).padStart(3, '0') + '.webp'); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function offer(id) { return OFFERS.filter(function (o) { return o.id === id; })[0]; }
 
@@ -580,7 +580,7 @@
       var pages = [];
       for (var i = 1; i <= meta.pages; i++) pages.push(pageUrl(parts[1], i));
       openViewer({ key: 'read-' + parts[1], title: label ? label.kicker + ' · ' + label.title : 'Brighter Days',
-        pages: pages, ratio: meta.ratio, download: meta.pdf, file: meta.file, start: +parts[2] || 1 });
+        pages: pages, ratio: meta.ratio, download: v(meta.pdf), file: meta.file, start: +parts[2] || 1 });
     } else if (parts[0] === 'activity') {
       closeSheet();
       var a = POPULAR.filter(function (x) { return x.n === +parts[1]; })[0];
