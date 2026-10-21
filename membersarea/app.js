@@ -59,7 +59,51 @@
       peek: 5,
       price: '$9.90',
       anchor: 'Less than a movie ticket',
-      checkout: 'https://pay.hotmart.com/S107962007U?off=rfflogfw'
+      checkout: 'https://pay.hotmart.com/S107962007U?off=rfflogfw&utm_source=mb&utm_medium=area-de-membros&utm_campaign=memory&src=mb'
+    },
+    {
+      id: 'christmas',
+      productId: '8776878',
+      docs: [{ id: 'christmas', kicker: 'Add-on', title: '30+ Christmas Activities for Seniors', text: 'A ready plan for December: memories, crafts, carols and a 60-minute party.' }],
+      title: '30+ Christmas Activities for Seniors',
+      banner: v('img/banners/christmas.webp'),
+      card: 'A ready-made December plan: memories, crafts, carols and a full Christmas party.',
+      sub: 'A joyful December, already planned',
+      text: 'December is the month they remember most, and the busiest one for you. This pack fills it with 30 simple activities, from Christmas memories and easy crafts to carol sing-alongs, plus a 60-minute party plan you can run as is.',
+      checks: [
+        'Christmas Traditions, Carol Sing-Along, Paint an Ornament and more',
+        '5 themes: memories, crafts, games, carols and seated movement',
+        'A 60-minute Christmas party plan, step by step',
+        'Bonus: bingo cards, large-print lyrics and coloring pages'
+      ],
+      peek: 5,
+      price: '$5.90',
+      anchor: 'Less than a box of Christmas cookies',
+      checkout: 'https://pay.hotmart.com/J108127223T?off=ev6r4kgb&utm_source=mb&utm_medium=area-de-membros&utm_campaign=christmas&src=mb'
+    },
+    {
+      id: 'alzheimer',
+      productId: '8772695',
+      docs: [
+        { id: 'alzheimer', kicker: 'Add-on', title: "Alzheimer's & Dementia Caregiver Protocol", text: 'What to say, do and avoid at every stage, with daily routines and activities.' },
+        { id: 'daily-summary', kicker: 'Add-on bonus', title: 'Daily Summary for the Family', text: 'A one-page report that tells the family how the day went.' },
+        { id: 'pro-kit', kicker: 'Add-on bonus', title: 'High-Value Professional Kit', text: 'For professional caregivers: show your value and track real results.' }
+      ],
+      title: "Alzheimer's & Dementia Caregiver Protocol",
+      banner: v('img/banners/alzheimer.webp'),
+      card: "Know exactly what to say, do and avoid at every stage of Alzheimer's and dementia.",
+      sub: 'Calm, confident care at every stage',
+      text: "7.4 million Americans over 65 are living with Alzheimer's, and most caregivers were never taught what to say when someone refuses a bath, asks to go home or doesn't recognize family. This protocol gives you the words and the routine for each stage.",
+      checks: [
+        'Find the stage: early, middle or late, with a profile sheet',
+        '16 hard situations with what to say and what to avoid',
+        'Daily routines and activities matched to each stage',
+        'Bonus: Daily Summary for the Family + Professional Kit'
+      ],
+      peek: 5,
+      price: '$19',
+      anchor: 'Less than one hour of professional care',
+      checkout: 'https://pay.hotmart.com/K108118568V?off=0qdo0nik&utm_source=mb&utm_medium=area-de-membros&utm_campaign=alzheimer&src=mb'
     },
     {
       id: 'fall-proof',
@@ -83,7 +127,7 @@
       peek: 5,
       price: '$19',
       anchor: 'Less than a single physical therapy visit',
-      checkout: 'https://pay.hotmart.com/J108012942O?off=k0uxnsgw'
+      checkout: 'https://pay.hotmart.com/J108012942O?off=k0uxnsgw&utm_source=mb&utm_medium=area-de-membros&utm_campaign=fall-proof&src=mb'
     },
     {
       id: 'bedridden',
@@ -103,7 +147,7 @@
       peek: 5,
       price: '$6.90',
       anchor: 'About the price of a coffee',
-      checkout: 'https://pay.hotmart.com/X108060189R?off=p6lqh7vg'
+      checkout: 'https://pay.hotmart.com/X108060189R?off=p6lqh7vg&utm_source=mb&utm_medium=area-de-membros&utm_campaign=bedridden&src=mb'
     },
     {
       id: 'lifetime',
@@ -124,7 +168,7 @@
       peek: 4,
       price: '$4.90',
       anchor: 'Pay once, keep it forever',
-      checkout: 'https://pay.hotmart.com/P107962058O?off=30n23zs5'
+      checkout: 'https://pay.hotmart.com/P107962058O?off=30n23zs5&utm_source=mb&utm_medium=area-de-membros&utm_campaign=lifetime&src=mb'
     }
   ];
 
@@ -151,7 +195,17 @@
   function lockedOffers() { return OFFERS.filter(function (o) { return !has(o); }); }
   function ownedOffers() { return OFFERS.filter(has); }
   var ADDON_DOCS = OFFERS.reduce(function (all, o) { return all.concat(o.docs); }, []);
-  function docOffer(id) { return OFFERS.filter(function (o) { return o.docs.some(function (d) { return d.id === id; }); })[0]; }
+  function docOffer(id) {
+    var list = OFFERS.filter(function (o) { return o.docs.some(function (d) { return d.id === id; }); });
+    return list.filter(has)[0] || list[0];
+  }
+
+  /* Ponte para o care.js (aba de acompanhamento). */
+  window.BD = { ICON: ICON, esc: esc, v: v, pageUrl: pageUrl, offer: offer, has: has, OFFERS: OFFERS,
+    rerender: function () {
+      if (!viewer.hidden) return;
+      var y = window.scrollY; currentBase = ''; clearTimers(); route(); window.scrollTo(0, y);
+    } };
 
   function header(withBack) {
     return '<header class="top"><div class="top-in">' +
@@ -262,6 +316,7 @@
   function home() {
     app.innerHTML = header(false) + '<main class="wrap">' +
       '<section class="hello"><h1>Welcome back! 👋</h1><p>Choose what you would like to explore today.</p></section>' +
+      (window.Care ? window.Care.homeCard() : '') +
       '<section class="sec"><div class="sec-h"><h2>Your products</h2><span>Your access and recommendations</span></div>' +
         '<article class="prod main"><a class="prod-img" href="#/' + MAIN.id + '" aria-label="Open Brighter Days"><img src="' + MAIN.banner + '" alt="" width="960" height="536" fetchpriority="high"></a>' +
           '<div class="prod-body"><span class="tag inc">Included in your plan</span><h3>' + MAIN.title + '</h3><p>' + MAIN.text + '</p>' +
@@ -298,7 +353,7 @@
         '<span class="rank"><b>#' + (i + 1) + '</b> this week</span></div>' +
         '<div class="pop-b"><strong>' + esc(a.title) + '</strong><span>' + esc(a.cat) + '</span></div></a>';
     }).join('');
-    var addons = ownedOffers().reduce(function (all, o) { return all.concat(o.docs); }, []);
+    var addons = ownedOffers().reduce(function (all, o) { return all.concat(o.docs.filter(function (d) { return !all.some(function (x) { return x.id === d.id; }); })); }, []);
     var promos = lockedOffers().map(function (o) {
       return '<a class="promo" href="#/unlock/' + o.id + '"><div class="prod-img"><img src="' + o.banner + '" alt="" width="960" height="536" decoding="async"><span class="lock-ic">' + ICON.lock + '</span></div>' +
         '<div class="promo-b"><small>Recommended for you</small><strong>' + esc(o.title) + '</strong><span>See What&rsquo;s Inside</span></div></a>';
@@ -383,7 +438,7 @@
     vCount.textContent = gItems.length > 1 ? (i + 1) + ' of ' + gItems.length + ' · swipe for more' : '';
     if (it.download) { vDl.hidden = false; vDl.href = it.download; vDl.setAttribute('download', it.file); }
     else vDl.hidden = true;
-    if (it.cta) { vCta.hidden = false; vCta.href = it.cta.href; vCta.textContent = it.cta.label; }
+    if (it.cta) { vCta.hidden = false; vCta.href = it.cta.href; vCta.textContent = it.cta.label; vCta.dataset.log = it.cta.log || ''; }
     else vCta.hidden = true;
     gPrev.disabled = i === 0;
     gNext.disabled = i === gItems.length - 1;
@@ -409,7 +464,7 @@
     total = o.pages.length;
     if (o.download) { vDl.hidden = false; vDl.href = o.download; vDl.setAttribute('download', o.file); }
     else vDl.hidden = true;
-    if (o.cta) { vCta.hidden = false; vCta.href = o.cta.href; vCta.textContent = o.cta.label; }
+    if (o.cta) { vCta.hidden = false; vCta.href = o.cta.href; vCta.textContent = o.cta.label; vCta.dataset.log = o.cta.log || ''; }
     else vCta.hidden = true;
     vPages.innerHTML = o.pages.map(function (src, i) {
       return '<div class="v-page" data-i="' + (i + 1) + '" style="aspect-ratio:1/' + o.ratio + '">' +
@@ -487,6 +542,9 @@
   $('#vIn').addEventListener('click', function () { setZoom(zoom + 0.5); });
   $('#vOut').addEventListener('click', function () { setZoom(zoom - 0.5); });
   $('#vClose').addEventListener('click', goBackOrHome);
+  vCta.addEventListener('click', function (e) {
+    if (vCta.dataset.log && window.Care) { e.preventDefault(); window.Care.openLog(vCta.dataset.log); }
+  });
   window.addEventListener('resize', function () {
     if (viewer.hidden) return;
     if (gItems) vScroll.scrollLeft = gIdx * vScroll.clientWidth; else setZoom(zoom);
@@ -561,14 +619,17 @@
       location.replace(guard.docs.length ? '#/read/' + guard.docs[0].id : '#/' + MAIN.id);
       return;
     }
+    var isCare = window.Care && window.Care.ROUTES[parts[0]];
     var base = parts[0] === 'read' || parts[0] === 'activity' ? 'brighter-days'
       : parts[0] === 'unlock' ? (currentBase || 'home')
+      : isCare ? 'care:' + h
       : parts[0] === 'brighter-days' ? 'brighter-days' : 'home';
     if (base !== currentBase) {
       var fromHome = currentBase === 'home';
       currentBase = base;
       clearTimers();
-      if (base === 'brighter-days') product(); else home();
+      if (base.indexOf('care:') === 0) window.Care.render(base.slice(5).split('/'));
+      else if (base === 'brighter-days') product(); else home();
       window.scrollTo(0, 0);
       if (base === 'brighter-days' && fromHome && parts[0] === 'brighter-days') showLoader();
     }
@@ -579,8 +640,10 @@
       var label = VOLUMES.concat(BONUSES, ADDON_DOCS).filter(function (d) { return d.id === parts[1]; })[0];
       var pages = [];
       for (var i = 1; i <= meta.pages; i++) pages.push(pageUrl(parts[1], i));
-      openViewer({ key: 'read-' + parts[1], title: label ? label.kicker + ' · ' + label.title : 'Brighter Days',
-        pages: pages, ratio: meta.ratio, download: v(meta.pdf), file: meta.file, start: +parts[2] || 1 });
+      var logKey = parts[3] === 'log' && parts[4] ? parts[4] : '';
+      openViewer({ key: 'read-' + parts[1] + (logKey ? '-' + logKey : ''), title: label ? label.kicker + ' · ' + label.title : 'Brighter Days',
+        pages: pages, ratio: meta.ratio, download: v(meta.pdf), file: meta.file, start: +parts[2] || 1,
+        cta: logKey ? { href: '#', label: '✓ Mark as done', log: logKey } : null });
     } else if (parts[0] === 'activity') {
       closeSheet();
       var a = POPULAR.filter(function (x) { return x.n === +parts[1]; })[0];
@@ -604,6 +667,7 @@
   window.addEventListener('member-ready', function (e) {
     owned = {};
     (e.detail.products || []).forEach(function (id) { owned[String(id)] = true; });
+    if (window.Care) window.Care.init(e.detail);
     window.addEventListener('hashchange', function () { stamp(); route(); });
     history.replaceState({ i: 1 }, '');
     navIdx = maxIdx = 1;

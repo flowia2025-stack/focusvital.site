@@ -60,21 +60,21 @@ window.DOCS = {
   "ratio": 1.5,
   "pdf": "pdf/memory.pdf",
   "file": "50+ Memory Activities for Dementia & Alzheimers.pdf",
-  "mb": 25.6
+  "mb": 15.3
  },
  "bedridden": {
   "pages": 52,
   "ratio": 1.5,
   "pdf": "pdf/bedridden.pdf",
   "file": "50+ Activities for Bedridden Seniors.pdf",
-  "mb": 30.2
+  "mb": 18.1
  },
  "fall-proof": {
   "pages": 38,
   "ratio": 1.5,
   "pdf": "pdf/fall-proof.pdf",
   "file": "Fall-Proof Legs Protocol.pdf",
-  "mb": 14.4
+  "mb": 10.3
  },
  "safe-home": {
   "pages": 6,
@@ -82,6 +82,27 @@ window.DOCS = {
   "pdf": "pdf/safe-home.pdf",
   "file": "The Safe Home Checklist.pdf",
   "mb": 1.5
+ },
+ "christmas": {
+  "pages": 44,
+  "ratio": 1.5,
+  "pdf": "pdf/christmas.pdf",
+  "file": "30+ Christmas Activities for Seniors.pdf",
+  "mb": 15.3
+ },
+ "alzheimer": {
+  "pages": 48,
+  "ratio": 1.5,
+  "pdf": "pdf/alzheimer.pdf",
+  "file": "Alzheimer's & Dementia Caregiver Protocol.pdf",
+  "mb": 13.4
+ },
+ "daily-summary": {
+  "pages": 1,
+  "ratio": 1.5,
+  "pdf": "pdf/daily-summary.pdf",
+  "file": "Daily Summary for the Family.pdf",
+  "mb": 0.3
  },
  "pro-kit": {
   "pages": 9,
@@ -91,4 +112,4 @@ window.DOCS = {
   "mb": 2.0
  }
 };
-window.IMGV = '20261017b';
+window.IMGV = '20261021c';
