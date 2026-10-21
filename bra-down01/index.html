@@ -117,16 +117,9 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:34px 16px 40p
 .cta-txt{text-align:center;font-family:var(--font-titulo);font-weight:900;font-size:17px;color:var(--coral);margin:0}
 
 /* versão por perfil (família x profissional) */
-body:not([data-perfil="family"]) .so-familia{display:none}
-body[data-perfil="family"] .so-pro{display:none}
 </style>
 </head>
 <body>
-<script>
-/* false = todo mundo vê a versão do profissional. Quando a família tiver vídeo próprio no upsell, troque pra true */
-var MOSTRAR_VERSAO_FAMILIA = false;
-(function(){var p='pro';try{var s=JSON.parse(localStorage.getItem('bd_quiz')||'null');if(MOSTRAR_VERSAO_FAMILIA&&s&&s.profile==='family')p='family';}catch(e){}document.body.setAttribute('data-perfil',p);})();
-</script>
 
 <div class="passo">
   <p><span>Wait!</span> A special discount was unlocked for you</p>
@@ -144,10 +137,8 @@ var MOSTRAR_VERSAO_FAMILIA = false;
     </div>
     <p>I understand. Maybe $19 isn't in your budget right now, and that's okay.</p>
     <p>But I can't let you leave this page without it. Because, as you saw in the video:</p>
-    <p class="alerta so-familia"><b>1 in 4 seniors</b> falls every year, and falls are the <b>leading cause of injury death after age 65.</b> Most families only find out how weak those legs were after the first fall.</p>
-    <p class="alerta so-pro">Families pay agencies around <b>$35 an hour</b>, while the average caregiver earns <b>less than $17</b>. What makes the difference is what you know how to do, and <b>keeping seniors steady and safe from falls</b> is the skill families pay more for.</p>
-    <p class="so-familia">So I've decided to do something I don't usually do. Only on this page, you can get the complete Fall-Proof Legs Protocol with <span class="off">48% OFF</span>.</p>
-    <p class="so-pro">So I've decided to do something I don't usually do. Only on this page, you can get the complete Fall-Proof Legs Protocol and the High-Value Professional Kit with <span class="off">48% OFF</span>.</p>
+    <p class="alerta"><b>7.4 million Americans</b> over 65 live with Alzheimer&#39;s, and most of the people caring for them were never taught how to handle the hard moments.</p>
+    <p>So I&#39;ve decided to do something I don&#39;t usually do. Only on this page, you can get the complete Alzheimer&#39;s &amp; Dementia Caregiver Protocol and the High-Value Professional Kit with <span class="off">48% OFF</span>.</p>
     <div class="valor-box">
       <p class="v1">In other words, for just</p>
       <p class="v2">$9.90</p>
@@ -157,14 +148,11 @@ var MOSTRAR_VERSAO_FAMILIA = false;
 
   <div class="price-card" style="margin-top:34px">
     <span class="tag">★ 48% OFF • Last chance</span>
-    <h3>Fall-Proof Legs Protocol</h3>
-    <div class="mockup so-familia"><picture><source type="image/webp" srcset="imagens/mockup-protocolo.webp"><img src="imagens/mockup-protocolo.jpg" width="720" height="720" alt="Fall-Proof Legs Protocol and the Safe Home Checklist bonus" loading="lazy" decoding="async"></picture></div>
-    <div class="mockup so-pro"><picture><source type="image/webp" srcset="imagens/mockup-protocolo-pro.webp"><img src="imagens/mockup-protocolo-pro.jpg" width="720" height="720" alt="Fall-Proof Legs Protocol and the High-Value Professional Kit bonus" loading="lazy" decoding="async"></picture></div>
+    <h3>Alzheimer&#39;s &amp; Dementia Caregiver Protocol</h3>
+    <div class="mockup"><picture><source type="image/webp" srcset="imagens/mockup-protocolo.webp"><img src="imagens/mockup-protocolo.jpg" width="720" height="720" alt="Alzheimer&#39;s &amp; Dementia Caregiver Protocol" loading="lazy" decoding="async"></picture></div>
     <ul>
-      <li><span class="nome"><span class="ck">✓</span><span>Fall-Proof Legs Protocol</span></span><span class="pr">$147</span></li>
-      <li class="so-familia"><span class="nome"><span class="ck">✓</span><span>Bonus: Safe Home Checklist</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
-      <li class="so-pro"><span class="nome"><span class="ck">✓</span><span>Bonus: High-Value Professional Kit</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
-      <li><span class="nome"><span class="ck">✓</span><span>Easy for Any Senior, Even Seated</span></span><span class="inc">Included</span></li>
+      <li><span class="nome"><span class="ck">✓</span><span>Alzheimer&#39;s &amp; Dementia Caregiver Protocol</span></span><span class="pr">$147</span></li>
+      <li><span class="nome"><span class="ck">✓</span><span>Bonus: High-Value Professional Kit</span></span><span class="duo"><span class="pr">$97</span><span class="inc">Free</span></span></li>
       <li><span class="nome"><span class="ck">✓</span><span>Instant Digital Access</span></span><span class="inc">Included</span></li>
       <li><span class="nome"><span class="ck">✓</span><span>28-Day Unconditional Guarantee</span></span><span class="inc">Included</span></li>
     </ul>
